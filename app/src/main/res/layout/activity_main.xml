@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+
+
+    <ImageView
+        android:id="@+id/soccer_field"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/soccer"
+        android:scaleType="centerCrop"/>
+
+    <Chronometer
+        android:id="@+id/timerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text= "00:00:00"
+        android:textColor="#ECEFF1"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/Reset"
+        android:textSize="36sp"/>
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:context="com.example.android.courtcounter.MainActivity">
+
+
+
+    <LinearLayout
+            android:id="@+id/team_a"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+           >
+
+            <Spinner
+                android:id="@+id/Choose_Your_Team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/World_cup_countries"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:paddingLeft="48dp"
+               />
+
+            <ImageView
+                android:id="@+id/team_a_flag"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="12dp"
+                />
+
+
+            <TextView
+                android:id="@+id/team_a_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textColor="#FAFAFA"
+                android:textSize="64sp"/>
+
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="GoalA"
+                android:layout_gravity="center_horizontal"
+                android:text= "Goal !!!" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/team_b"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+            >
+
+            <Spinner
+                android:id="@+id/Choose_Your_Team_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:entries="@array/World_cup_countries"
+                android:textColor="#FAFAFA"
+                android:layout_marginTop="48sp"
+                android:paddingLeft="48sp"/>
+
+
+            <ImageView
+                android:id="@+id/team_b_flag"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="12sp"/>
+
+
+
+            <TextView
+                android:id="@+id/team_b_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textColor="#FAFAFA"
+                android:textSize="64sp"/>
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="GoalB"
+                android:layout_gravity="center_horizontal"
+                android:text= "Goal !!!" />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="VS"
+        android:textColor="#FAFAFA"
+        android:textSize="64sp"/>
+
+    <Button
+        android:id="@+id/Reset"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Reset"
+        android:layout_gravity="center_horizontal"
+        android:text="Reset" />
+
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Reset"
+        android:text="Start" />
+
+
+    <Button
+        android:id="@+id/pauseButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Reset"
+        android:text="Stop" />
+
+
+
+
+</RelativeLayout>
