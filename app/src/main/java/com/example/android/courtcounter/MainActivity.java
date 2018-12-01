@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private ImageView itemImageB;
 
 
-    Button start, pause , Reset;
+    Button start, pause, Reset;
     TextView time;
 
     private long startTime = 0L;
@@ -41,7 +41,6 @@ public class MainActivity extends Activity implements OnClickListener {
     long timeSwapBuff = 0L;
     long updatedTime = 0L;
     boolean stopTimer = false;
-
 
 
     int scoreTeamA = 0;
@@ -61,8 +60,6 @@ public class MainActivity extends Activity implements OnClickListener {
         pause.setOnClickListener((OnClickListener) this);
 
 
-
-
         listOfObject = getResources().getStringArray(R.array.World_cup_countries);
 
         images = getResources().obtainTypedArray(R.array.World_Cup_Flags);
@@ -71,7 +68,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
         final Spinner Team_A_Flag = (Spinner) findViewById(R.id.Choose_Your_Team);
 
-        ArrayAdapter<String> team_A_Selection = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,listOfObject);
+        ArrayAdapter<String> team_A_Selection = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listOfObject);
 
         Team_A_Flag.setAdapter(team_A_Selection);
 
@@ -89,7 +86,7 @@ public class MainActivity extends Activity implements OnClickListener {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-                }
+            }
         });
 
 
@@ -144,7 +141,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
 
 
-                }
+        }
 
 
     }
@@ -172,66 +169,55 @@ public class MainActivity extends Activity implements OnClickListener {
     };
 
 
+    /**
+     * Calculating Team Scores
+     */
+
+    public void GoalA(View v) {
+        scoreTeamA = scoreTeamA + 1;
+        displayForTeamA(scoreTeamA);
+    }
 
 
+    public void GoalB(View v) {
+        scoreTeamB = scoreTeamB + 1;
+        displayForTeamB(scoreTeamB);
+    }
 
 
-
-
-
-
-
-
-    /** Calculating Team Scores */
-
-        public void GoalA(View v) {
-            scoreTeamA = scoreTeamA + 1;
-            displayForTeamA(scoreTeamA);
-        }
-
-
-
-
-
-        public void GoalB(View v) {
-            scoreTeamB = scoreTeamB + 1;
-            displayForTeamB(scoreTeamB);
-        }
-
-
-
-        public void Reset(View V) {
+    public void Reset(View V) {
         scoreTeamA = 0;
         scoreTeamB = 0;
 
-
+        
 
 
         displayForTeamA(scoreTeamA);
+
         displayForTeamB(scoreTeamB);
 
-        }
+    }
 
 
-        /**
-         * Displays the given score for Team A.
-         */
-        public void displayForTeamA(int score) {
-            TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-            scoreView.setText(String.valueOf(score));
-        }
+    /**
+     * Displays the given score for Team A.
+     */
+    public void displayForTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView.setText(String.valueOf(score));
+    }
 
-        /**
-         * Displays the given score for Team B.
-         */
+    /**
+     * Displays the given score for Team B.
+     */
 
-        public void displayForTeamB(int score) {
+    public void displayForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
 
-    }
+}
 
 
 
